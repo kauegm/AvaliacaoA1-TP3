@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-Aplicacao_A1-9c8d0726-0ed5-4c28-b1a4-56af496852ad</UserSecretsId>
+    <RootNamespace>Aplicacao_A1</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="App-start\**" />
+    <Compile Remove="Views\Fornecedors\**" />
+    <Compile Remove="Views\Produtoes\**" />
+    <Content Remove="App-start\**" />
+    <Content Remove="Views\Fornecedors\**" />
+    <Content Remove="Views\Produtoes\**" />
+    <EmbeddedResource Remove="App-start\**" />
+    <EmbeddedResource Remove="Views\Fornecedors\**" />
+    <EmbeddedResource Remove="Views\Produtoes\**" />
+    <None Remove="App-start\**" />
+    <None Remove="Views\Fornecedors\**" />
+    <None Remove="Views\Produtoes\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10" />
+    <PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="4.2.2" />
+    <PackageReference Include="Microsoft.Owin.Security.Cookies" Version="4.2.2" />
+    <PackageReference Include="Microsoft.Owin.Security.Google" Version="4.2.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.6" />
+  </ItemGroup>
+
+</Project>

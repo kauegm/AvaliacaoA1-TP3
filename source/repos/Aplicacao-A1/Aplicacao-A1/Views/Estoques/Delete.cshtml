@@ -1,0 +1,30 @@
+﻿@model Aplicacao_A1.Models.Estoque
+
+@{
+    ViewData["Title"] = "Excluir Estoque";
+}
+
+<div class="container my-5">
+    <h1 class="text-center mb-4">Excluir Estoque</h1>
+
+    <div class="card shadow-sm border-0 p-4">
+        <h3 class="text-danger text-center">Tem certeza de que deseja excluir este estoque?</h3>
+        <dl class="row mt-4">
+            <dt class="col-sm-3 fw-bold">Produto:</dt>
+            <dd class="col-sm-9">@Model.Produto.Nome</dd>
+
+            <dt class="col-sm-3 fw-bold">Quantidade:</dt>
+            <dd class="col-sm-9">@Model.Quantidade</dd>
+        </dl>
+
+        <form asp-action="Delete" class="text-center mt-4">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-danger me-2">
+                <i class="bi bi-trash"></i>
+            </button>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> Voltar
+            </a>
+        </form>
+    </div>
+</div>

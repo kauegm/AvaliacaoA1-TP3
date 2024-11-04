@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Aplicacao_A1.Models.Pedido>
+
+@{
+    ViewData["Title"] = "Lista de Pedidos";
+}
+
+<div class="container my-5">
+    <h1 class="text-center mb-4">Lista de Pedidos</h1>
+
+    <div class="text-end mb-3">
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="bi bi-plus-lg"></i> Novo Pedido
+        </a>
+    </div>
+
+    <div class="card shadow-sm border-0">
+        <div class="card-body p-0">
+            <table class="table table-hover">
+                <thead class="table-light">
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Data do Pedido</th>
+                        <th>Total</th>
+                        <th class="text-center">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Cliente?.Nome</td>
+                            <td>@item.DataPedido.ToString("d")</td>
+                            <td>@item.Total.ToString("C")</td>
+                            <td class="text-center">
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning me-2">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info me-2">
+                                    <i class="bi bi-eye"></i>
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

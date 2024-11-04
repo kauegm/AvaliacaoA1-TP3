@@ -1,0 +1,28 @@
+﻿@model Aplicacao_A1.Models.Estoque
+
+@{
+    ViewData["Title"] = "Detalhes do Estoque";
+}
+
+<div class="container my-5">
+    <h1 class="text-center mb-4">Detalhes do Estoque</h1>
+
+    <div class="card shadow-sm border-0 p-4">
+        <dl class="row">
+            <dt class="col-sm-3 fw-bold">Produto:</dt>
+            <dd class="col-sm-9">@Model.Produto.Nome</dd>
+
+            <dt class="col-sm-3 fw-bold">Quantidade:</dt>
+            <dd class="col-sm-9">@Model.Quantidade</dd>
+        </dl>
+
+        <div class="text-center mt-4">
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning me-2">
+                <i class="bi bi-pencil"></i>
+            </a>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> Voltar
+            </a>
+        </div>
+    </div>
+</div>

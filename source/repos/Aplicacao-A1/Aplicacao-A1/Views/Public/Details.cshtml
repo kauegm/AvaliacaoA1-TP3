@@ -1,0 +1,29 @@
+﻿@model Aplicacao_A1.Models.Produto
+
+@{
+    ViewData["Title"] = "Detalhes do Produto";
+}
+
+<div class="container my-5">
+    <h1 class="text-center mb-4">Detalhes do Produto</h1>
+
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+            <h4 class="card-title">@Model.Nome</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-3 font-weight-bold">Nome:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Nome)</dd>
+
+                <dt class="col-sm-3 font-weight-bold">Preço:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Preco, "{0:C}")</dd>
+
+                <dt class="col-sm-3 font-weight-bold">Categoria:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Categoria.Nome)</dd>
+            </dl>
+        </div>
+        <div class="card-footer text-center">
+            <a asp-action="Produtos" asp-controller="Public" class="btn btn-secondary">Voltar</a>
+        </div>
+    </div>
+</div>
